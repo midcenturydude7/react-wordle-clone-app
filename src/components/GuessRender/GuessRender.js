@@ -4,15 +4,11 @@ import Guess from "../Guess/Guess";
 function GuessRender({ guesses }) {
   return (
     <div className="guess-results">
-      <Guess numRows={6} numCols={5} />
+      {guesses.map((guess, index) => (
+        <Guess key={index} value={guess} />
+      ))}
     </div>
   );
 }
-
-// <div className="guess-results">
-//   {guesses.map(({ value, id }) => (
-//     <p key={id}>{value}</p>
-//   ))}
-// </div>
 
 export default GuessRender;

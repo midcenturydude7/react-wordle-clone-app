@@ -1,17 +1,17 @@
 import React from "react";
+
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import { range } from "../../utils";
 
-function Guess({ numRows, numCols }) {
+function Guess({ value }) {
   return (
-    <>
-      {range(numRows).map((rowIndex) => (
-        <p className="guess" key={rowIndex}>
-          {range(numCols).map((colIndex) => (
-            <span className="cell" key={colIndex}></span>
-          ))}
-        </p>
+    <p className="guess">
+      {value.split("").map((letter, index) => (
+        <span key={index} className="cell">
+          {letter}
+        </span>
       ))}
-    </>
+    </p>
   );
 }
 
